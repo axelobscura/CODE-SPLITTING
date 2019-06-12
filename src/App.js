@@ -8,7 +8,7 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      route: 'page1'
+      route: 'Page1'
     }
   }
 
@@ -18,13 +18,13 @@ class App extends Component {
   }
 
   render(){
-    return (
-      <div className="App">
-        <Page1 onRouteChange={this.onRouteChange} />
-        <Page2 onRouteChange={this.onRouteChange} />
-        <Page3 onRouteChange={this.onRouteChange} />
-      </div>
-    );
+    if(this.state.route === 'Page1'){
+      return <Page1 onRouteChange={this.onRouteChange} />
+    } else if(this.state.route === 'Page2'){
+      return <Page2 onRouteChange={this.onRouteChange} />
+    } else if(this.state.route === 'Page3') {
+      return <Page3 onRouteChange={this.onRouteChange} />
+    }
   }
 }
 
